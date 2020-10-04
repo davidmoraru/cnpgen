@@ -5,7 +5,7 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "surge": "vue-cli-service build && surge ./dist --domain https://cnp-gen.surge.sh && start https://cnp-gen.surge.sh"
+        "surge": "vue-cli-service build && surge ./dist --domain https://cnp-generator.surge.sh && start https://cnp-generator.surge.sh"
     },
     "dependencies": {
         "bulma": "^0.9.0",
