@@ -155,26 +155,28 @@
           <div class="content">
             <strong>CNP-uri</strong> salvate:
           </div>
-          <table class="table is-bordered is-fullwidth">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Sexul</th>
-                <th>Data nasterii</th>
-                <th>Judet</th>
-                <th>CNP</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(data, index) in salvate" :key="index">
-                <td><code>{{ index+1 }}</code></td>
-                <td><code>{{ data.sex }}</code></td>
-                <td><code>{{ data.dob }}</code></td>
-                <td><code>{{ data.state }}</code></td>
-                <td><code>{{ data.cnp }}</code></td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-container">
+            <table class="table is-bordered is-fullwidth">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Sexul</th>
+                  <th>Data nasterii</th>
+                  <th>Judet</th>
+                  <th>CNP</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(data, index) in salvate" :key="index">
+                  <td><code>{{ index+1 }}</code></td>
+                  <td><code>{{ data.sex }}</code></td>
+                  <td><code>{{ data.dob }}</code></td>
+                  <td><code>{{ data.state }}</code></td>
+                  <td><code>{{ data.cnp }}</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </form>
