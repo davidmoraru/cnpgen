@@ -138,7 +138,7 @@
                     </a>
                   </p>
                   <p class="control">
-                    <button type="reset" class="button is-danger is-small">
+                    <button type="reset" class="button is-danger is-small" @click="resetGen">
                       Reseteaza
                     </button>
                   </p>
@@ -152,11 +152,11 @@
               </div>
             </div>
           </div>
-          <div class="content">
+          <div class="content" v-if="salvate.length">
             <strong>CNP-uri</strong> salvate:
           </div>
           <div class="table-container">
-            <table class="table is-bordered is-fullwidth">
+            <table class="table is-bordered is-fullwidth" v-if="salvate.length">
               <thead>
                 <tr>
                   <th>#</th>
@@ -176,6 +176,9 @@
                 </tr>
               </tbody>
             </table>
+            <div v-else>
+              <center><strong>CNP-uri salvate</strong><br><code>Nu este niciun CNP in baza de date <br> <a href="#" @click.prevent="genCNP">Genereaza unul nou.</a></code></center>
+            </div>
           </div>
         </div>
       </div>
@@ -224,7 +227,13 @@ export default {
       if (usergen)
         genCNP();
     }
-    var salvate = reactive([]);
+    const salvate = reactive([]);
+
+    function resetGen() {
+      while (salvate.length) {
+        salvate.pop();
+      }
+    }
 
     function getRandom(min = 500, max = 999) {
       min = Math.ceil(min);
@@ -305,6 +314,7 @@ export default {
       randomCNP(false);
     });
     return {
+      resetGen,
       gen,
       range,
       ani,
