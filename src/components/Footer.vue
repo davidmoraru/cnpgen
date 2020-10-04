@@ -8,10 +8,15 @@
     </div>
     <div class="columns">
       <div class="column is-8-desktop is-offset-2-desktop">
+        <hr>
         <p>
           <small>
-            Codul sursa este licentiat ca <a href="https://github.com/davidmoraru/cnpgen">MIT</a><br>Se poate descarca de pe GitHub <a href="https://github.com/davidmoraru/cnpgen">aici</a>.
+            Se poate descarca <code>gratuit</code> de pe <a href="https://github.com/davidmoraru/cnpgen">GitHub</a>.
+            <br>
+            <span v-html="copy.text"></span>
           </small>
+          <br>
+
         </p>
       </div>
     </div>
@@ -20,8 +25,19 @@
 </template>
 
 <script>
+import {
+  reactive
+} from 'vue'
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  setup() {
+    const copy = reactive({
+      text: '&copy;' + new Date().getFullYear() + '. Cod Sursa Licentiat ca <a href="https://github.com/davidmoraru/cnpgen">MIT</a>.'
+    })
+    return {
+      copy
+    }
+  }
 }
 </script>
 
