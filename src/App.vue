@@ -1,21 +1,3 @@
 <template>
-<Gen />
-<Footer />
+<router-view />
 </template>
-
-<script>
-import Gen from './components/Gen.vue'
-import Footer from './components/Footer.vue'
-
-export default {
-  name: 'App',
-  components: {
-    Gen,
-    Footer
-  }
-}
-</script>
-
-<style lang="scss">
-
-</style>

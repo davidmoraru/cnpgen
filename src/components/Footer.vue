@@ -5,7 +5,7 @@
       <div class="column is-8-desktop is-offset-2-desktop">
         <p>
           <small>
-            Source code licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+            Codul sursa este licentiat ca <a href="https://github.com/davidmoraru/cnpgen">MIT</a><br>Se poate descarca de pe GitHub <a href="https://github.com/davidmoraru/cnpgen">aici</a>.
           </small>
         </p>
       </div>
