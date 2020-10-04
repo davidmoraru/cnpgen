@@ -3,6 +3,11 @@
   <div class="container">
     <div class="columns">
       <div class="column is-8-desktop is-offset-2-desktop">
+        <div class="content" id="adsgoeshere"></div>
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-8-desktop is-offset-2-desktop">
         <p>
           <small>
             Codul sursa este licentiat ca <a href="https://github.com/davidmoraru/cnpgen">MIT</a><br>Se poate descarca de pe GitHub <a href="https://github.com/davidmoraru/cnpgen">aici</a>.

@@ -4,9 +4,8 @@
 </template>
 
 <script>
-import Gen from '@/components/Gen.vue'
-import Footer from '@/components/Footer.vue'
-
+import Gen from '../components/Gen.vue'
+import Footer from '../components/Footer.vue'
 export default {
   name: 'Home',
   components: {
