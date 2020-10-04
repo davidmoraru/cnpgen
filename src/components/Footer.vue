@@ -10,12 +10,15 @@
       <div class="column is-8-desktop is-offset-2-desktop">
         <hr>
         <p>
+          <a href="https://github.com/davidmoraru/cnpgen/releases/tag/0.2.0" target="_blank">
+            <img class="download" src="../assets/winstorebanner-300x108.png" alt="Download for Windows 10" title="Download for Windows 10">
+          </a>
+          <br>
           <small>
             Se poate descarca <code>gratuit</code> de pe <a href="https://github.com/davidmoraru/cnpgen">GitHub</a>.
             <br>
             <span v-html="copy.text"></span>
           </small>
-          <br>
 
         </p>
       </div>
@@ -42,5 +45,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.download {
+  width: 100px;
+  height: auto;
+}
 </style>
