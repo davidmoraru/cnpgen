@@ -1,5 +1,5 @@
-# cnpgen
-
+# CNP Generator
+Made in Vue 3
 ## Project setup
 ```
 yarn install
