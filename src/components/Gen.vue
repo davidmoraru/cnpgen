@@ -177,7 +177,7 @@
               </tbody>
             </table>
             <div v-else>
-              <center><strong>CNP-uri salvate</strong><br><code>Nu este niciun CNP in baza de date <br> <a href="#" @click.prevent="genCNP">Genereaza unul nou.</a></code></center>
+              <div class="center"><strong>CNP-uri salvate</strong><br><code>Nu este niciun CNP in baza de date <br> <a href="#" @click.prevent="genCNP">Genereaza unul nou.</a></code></div>
             </div>
           </div>
         </div>
@@ -199,7 +199,6 @@ export default {
   setup(props, ctx) {
     var zile = ref('');
     var ani = ref('');
-    const stateRef = ref(null);
     const gen = reactive({
       sex: '0',
       day: '01',
@@ -321,7 +320,6 @@ export default {
       zile,
       genCNP,
       salvate,
-      stateRef,
       randomCNP
     }
   }
@@ -331,6 +329,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style lang="scss" scoped>
+.center {
+  text-align: center;
+}
+
 .section {
   padding: 1.5rem 1.5rem;
 }
