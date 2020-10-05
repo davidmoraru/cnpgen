@@ -1,5 +1,12 @@
 # CNP Generator
 Construit in Vue 3
+
+### Download for Winows x64bit
+Descarca [Latest release](https://github.com/davidmoraru/cnpgen/releases/latest).
+
+```
+sau ...
+```
 ## Project setup
 ```
 yarn install
@@ -14,8 +21,7 @@ yarn serve
 ```
 yarn build
 ```
-### Download for Winows x64bit
-See [Latest release](https://github.com/davidmoraru/cnpgen/releases/latest).
+
 
 
 ### Customize configuration
