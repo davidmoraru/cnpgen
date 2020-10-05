@@ -1,5 +1,5 @@
 # CNP Generator
-Made in Vue 3
+Construit in Vue 3
 ## Project setup
 ```
 yarn install
@@ -14,6 +14,9 @@ yarn serve
 ```
 yarn build
 ```
-
+### Download for Winows x64bit
+```
+See [Latest release](https://github.com/davidmoraru/cnpgen/releases/latest).
+```
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
