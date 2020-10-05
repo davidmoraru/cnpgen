@@ -1,7 +1,7 @@
 <template>
 <footer class="footer">
   <small>
-    <a href="https://github.com/davidmoraru/cnpgen/releases/tag/0.2.0" target="_blank">
+    <a href="https://github.com/davidmoraru/cnpgen/releases/latest" target="_blank">
       <img class="download" src="../assets/winstorebanner-300x108.png" alt="Download for Windows 10" title="Download for Windows 10">
     </a>
     <a href="https://github.com/davidmoraru/cnpgen" target="_blank">
