@@ -1,190 +1,186 @@
 <template>
-<section class="section">
-  <div class="container">
-    <form method="POST" @submit.prevent="genCNP">
-      <div class="columns">
-        <div class="column is-8-desktop is-offset-2-desktop">
-          <div class="content">
-            <h4>Generator CNP</h4>
-            <hr>
-            <div class="columns is-variable is-1">
-              <div class="column">
-                <div class="field">
-                  <label class="label">Sexul</label>
-                  <div class="control is-expanded">
-                    <div class="select is-fullwidth">
-                      <select v-model="gen.sex">
-                        <option value="0">Bărbat</option>
-                        <option value="1">Femeie</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="column">
-                <div class="field">
-                  <label class="label">Anul</label>
-                  <div class="control is-expanded">
-                    <div class="select is-fullwidth">
-                      <select v-model="gen.year">
-                        <option v-for="(an, index) in ani" :key="index" :value="an">{{ an }}</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="column">
-                <div class="field">
-                  <label class="label">Luna</label>
-                  <div class="control is-expanded">
-                    <div class="select is-fullwidth">
-                      <select v-model="gen.month">
-                        <option value="01">Ianuarie</option>
-                        <option value="02">Februarie</option>
-                        <option value="03">Martie</option>
-                        <option value="04">Aprilie</option>
-                        <option value="05">Mai</option>
-                        <option value="06">Iunie</option>
-                        <option value="07">Iulie</option>
-                        <option value="08">August</option>
-                        <option value="09">Septembrie</option>
-                        <option value="10">Octombrie</option>
-                        <option value="11">Noiembrie</option>
-                        <option value="12">Decembrie</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="column">
-                <div class="field">
-                  <label class="label">Ziua</label>
-                  <div class="control is-expanded">
-                    <div class="select is-fullwidth">
-                      <select v-model="gen.day">
-                        <option v-for="(zi, index) in zile()" :key="index" :value="(zi <= 9) ? '0' + zi: zi">{{ zi }}</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="column">
-                <div class="field">
-                  <label class="label">Judeţul</label>
-                  <div class="control is-expanded">
-                    <div class="select is-fullwidth">
-                      <select v-model="gen.state" id="stateRef">
-                        <option value="40">București</option>
-                        <option value="41">București S.1</option>
-                        <option value="42">București S.2</option>
-                        <option value="43">București S.3</option>
-                        <option value="44">București S.4</option>
-                        <option value="45">București S.5</option>
-                        <option value="46">București S.6</option>
-                        <option value="01">Alba</option>
-                        <option value="02">Arad</option>
-                        <option value="03">Argeș</option>
-                        <option value="04">Bacău</option>
-                        <option value="05">Bihor</option>
-                        <option value="06">Bistrița-Năsăud</option>
-                        <option value="07">Botoșani</option>
-                        <option value="08">Brașov</option>
-                        <option value="09">Brăila</option>
-                        <option value="10">Buzău</option>
-                        <option value="11">Caraș-Severin</option>
-                        <option value="12">Cluj</option>
-                        <option value="13">Constanța</option>
-                        <option value="14">Covasna</option>
-                        <option value="15">Dâmbovița</option>
-                        <option value="16">Dolj</option>
-                        <option value="17">Galați</option>
-                        <option value="18">Gorj</option>
-                        <option value="19">Harghita</option>
-                        <option value="20">Hunedoara</option>
-                        <option value="21">Ialomița</option>
-                        <option value="22">Iași</option>
-                        <option value="23">Ilfov</option>
-                        <option value="24">Maramureș</option>
-                        <option value="25">Mehedinți</option>
-                        <option value="26">Mureș</option>
-                        <option value="27">Neamț</option>
-                        <option value="28">Olt</option>
-                        <option value="29">Prahova</option>
-                        <option value="30">Satu Mare</option>
-                        <option value="31">Sălaj</option>
-                        <option value="32">Sibiu</option>
-                        <option value="33">Suceava</option>
-                        <option value="34">Teleorman</option>
-                        <option value="35">Timiș</option>
-                        <option value="36">Tulcea</option>
-                        <option value="37">Vaslui</option>
-                        <option value="38">Vâlcea</option>
-                        <option value="39">Vrancea</option>
-                        <option value="51">Călărași</option>
-                        <option value="52">Giurgiu</option>
-                      </select>
-                    </div>
+<div class="container">
+  <form method="POST" @submit.prevent="genCNP">
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          <div class="columns is-variable is-1">
+            <div class="column">
+              <div class="field">
+                <label class="label">Sexul</label>
+                <div class="control is-expanded">
+                  <div class="select is-fullwidth is-small">
+                    <select v-model="gen.sex">
+                      <option value="0">Bărbat</option>
+                      <option value="1">Femeie</option>
+                    </select>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="columns">
-              <div class="column">
-                <div class="field is-grouped is-grouped-right">
-                  <p class="control">
-                    <a href="#" class="button is-small is-white" @click.prevent="randomCNP">
-                      Random
-                    </a>
-                  </p>
-                  <p class="control">
-                    <button type="reset" class="button is-danger is-small" @click="resetGen">
-                      Reseteaza
-                    </button>
-                  </p>
-                  <p class="control">
-                    <button type="submit" class="button is-primary is-small">
-                      Genereaza
-                    </button>
-                  </p>
+            <div class="column">
+              <div class="field">
+                <label class="label">Anul</label>
+                <div class="control is-expanded">
+                  <div class="select is-fullwidth is-small">
+                    <select v-model="gen.year">
+                      <option v-for="(an, index) in ani" :key="index" :value="an">{{ an }}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">Luna</label>
+                <div class="control is-expanded">
+                  <div class="select is-fullwidth is-small">
+                    <select v-model="gen.month">
+                      <option value="01">Ianuarie</option>
+                      <option value="02">Februarie</option>
+                      <option value="03">Martie</option>
+                      <option value="04">Aprilie</option>
+                      <option value="05">Mai</option>
+                      <option value="06">Iunie</option>
+                      <option value="07">Iulie</option>
+                      <option value="08">August</option>
+                      <option value="09">Septembrie</option>
+                      <option value="10">Octombrie</option>
+                      <option value="11">Noiembrie</option>
+                      <option value="12">Decembrie</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label">Ziua</label>
+                <div class="control is-expanded">
+                  <div class="select is-fullwidth is-small">
+                    <select v-model="gen.day">
+                      <option v-for="(zi, index) in zile()" :key="index" :value="(zi <= 9) ? '0' + zi: zi">{{ zi }}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <div class="column">
+              <div class="field">
+                <label class="label">Judeţul</label>
+                <div class="control is-expanded">
+                  <div class="select is-fullwidth is-small">
+                    <select v-model="gen.state" id="stateRef">
+                      <option value="40">București</option>
+                      <option value="41">București S.1</option>
+                      <option value="42">București S.2</option>
+                      <option value="43">București S.3</option>
+                      <option value="44">București S.4</option>
+                      <option value="45">București S.5</option>
+                      <option value="46">București S.6</option>
+                      <option value="01">Alba</option>
+                      <option value="02">Arad</option>
+                      <option value="03">Argeș</option>
+                      <option value="04">Bacău</option>
+                      <option value="05">Bihor</option>
+                      <option value="06">Bistrița-Năsăud</option>
+                      <option value="07">Botoșani</option>
+                      <option value="08">Brașov</option>
+                      <option value="09">Brăila</option>
+                      <option value="10">Buzău</option>
+                      <option value="11">Caraș-Severin</option>
+                      <option value="12">Cluj</option>
+                      <option value="13">Constanța</option>
+                      <option value="14">Covasna</option>
+                      <option value="15">Dâmbovița</option>
+                      <option value="16">Dolj</option>
+                      <option value="17">Galați</option>
+                      <option value="18">Gorj</option>
+                      <option value="19">Harghita</option>
+                      <option value="20">Hunedoara</option>
+                      <option value="21">Ialomița</option>
+                      <option value="22">Iași</option>
+                      <option value="23">Ilfov</option>
+                      <option value="24">Maramureș</option>
+                      <option value="25">Mehedinți</option>
+                      <option value="26">Mureș</option>
+                      <option value="27">Neamț</option>
+                      <option value="28">Olt</option>
+                      <option value="29">Prahova</option>
+                      <option value="30">Satu Mare</option>
+                      <option value="31">Sălaj</option>
+                      <option value="32">Sibiu</option>
+                      <option value="33">Suceava</option>
+                      <option value="34">Teleorman</option>
+                      <option value="35">Timiș</option>
+                      <option value="36">Tulcea</option>
+                      <option value="37">Vaslui</option>
+                      <option value="38">Vâlcea</option>
+                      <option value="39">Vrancea</option>
+                      <option value="51">Călărași</option>
+                      <option value="52">Giurgiu</option>
+                    </select>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="content" v-if="salvate.length">
-            <strong>CNP-uri</strong> salvate:
-          </div>
-          <div class="table-container">
-            <table class="table is-bordered is-fullwidth" v-if="salvate.length">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Sexul</th>
-                  <th>Data nasterii</th>
-                  <th>Judet</th>
-                  <th>CNP</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="(data, index) in salvate" :key="index">
-                  <td><code>{{ index+1 }}</code></td>
-                  <td><code>{{ data.sex }}</code></td>
-                  <td><code>{{ data.dob }}</code></td>
-                  <td><code>{{ data.state }}</code></td>
-                  <td><code>{{ data.cnp }}</code></td>
-                </tr>
-              </tbody>
-            </table>
-            <div v-else>
-              <div class="center"><strong>CNP-uri salvate</strong><br><code>Nu este niciun CNP in baza de date <br> <a href="#" @click.prevent="genCNP">Genereaza unul nou.</a></code></div>
+          <div class="columns">
+            <div class="column">
+              <div class="field is-grouped is-grouped-right">
+                <p class="control">
+                  <button type="reset" class="button is-danger is-small" @click="resetGen">
+                    Reset
+                  </button>
+                </p>
+                <p class="control">
+                  <button type="submit" class="button is-primary is-small">
+                    Generează
+                  </button>
+                </p>
+                <p class="control">
+                  <a href="#" class="button is-small is-black" @click.prevent="randomCNP">
+                    Random
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
+        <div class="content" v-if="salvate.length">
+          <strong>CNP-uri</strong> salvate:
+        </div>
+        <div class="table-container">
+          <table class="table is-bordered is-fullwidth" v-if="salvate.length">
+            <thead>
+              <tr>
+                <th style="display: none;">#</th>
+                <th>Sexul</th>
+                <th>Data nașterii</th>
+                <th>Județ</th>
+                <th>CNP</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(data, index) in salvate" :key="index">
+                <td style="display: none;"><small>{{ index+1 }}</small></td>
+                <td><small>{{ data.sex }}</small></td>
+                <td><small>{{ data.dob }}</small></td>
+                <td><small>{{ data.state }}</small></td>
+                <td><small><strong>{{ data.cnp }}</strong></small></td>
+              </tr>
+            </tbody>
+          </table>
+          <div v-else>
+            <div class="center"><strong>CNP-uri salvate</strong><br><small>Niciun CNP in baza de date <br> <a href="#" @click.prevent="genCNP">Generează unul nou.</a></small></div>
+          </div>
+        </div>
+        <br>
       </div>
-    </form>
-  </div>
-</section>
+    </div>
+  </form>
+</div>
 </template>
 
 <script>
@@ -329,11 +325,24 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style lang="scss" scoped>
+.field>label {
+  margin-bottom: 0 !important;
+  font-size: unset !important;
+  font-weight: unset !important;
+  ;
+}
+
 .center {
   text-align: center;
 }
 
 .section {
   padding: 1.5rem 1.5rem;
+
+}
+
+section>.container {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 </style>
