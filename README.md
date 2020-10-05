@@ -4,6 +4,10 @@ Construit in Vue 3
 ### Download for Winows x64bit
 Descarca [Latest release](https://github.com/davidmoraru/cnpgen/releases/latest).
 
+### Screenshots
+
+![Screenshot](https://i.imgur.com/EyTTyGG.png "Desktop App")
+
 ```
 sau ...
 ```
