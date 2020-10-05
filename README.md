@@ -5,8 +5,15 @@ Construit in Vue 3
 Descarca [Latest release](https://github.com/davidmoraru/cnpgen/releases/latest).
 
 ### Screenshots
-
+Desktop App
 ![Screenshot](https://i.imgur.com/EyTTyGG.png "Desktop App")
+
+Browser App
+![Screenshot](https://i.imgur.com/2hqIA9z.png "Browser App")
+
+Mobile PWA App
+![Screenshot](https://i.ibb.co/71bXBQ1/Screenshot-20201005-142717-Chrome.jpg "Mobile PWA App")
+
 
 ```
 sau ...
