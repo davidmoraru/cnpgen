@@ -16,12 +16,17 @@
 <script>
 import {
   reactive
-} from 'vue'
+} from 'vue';
+import {
+  name,
+  version
+} from '../../package.json';
 export default {
   name: 'Footer',
   setup() {
+    const v = ' ' + name + '@v' + version + ' ';
     const copy = reactive({
-      text: '&copy;' + new Date().getFullYear() + '. Cod Sursă Licențiat ca <a>MIT</a>.'
+      text: '&copy;' + new Date().getFullYear() + v + '. Cod Sursă Licențiat ca <a>MIT</a>.'
     })
     return {
       copy

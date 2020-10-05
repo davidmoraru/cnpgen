@@ -1,7 +1,7 @@
 {
     "name": "cnpgen",
-    "description": "Generator CNP, CNP-uri",
-    "version": "0.2.5",
+    "description": "Generator CNP, Generator CNP-uri. Un generator de CNP-uri rapid si complet. Genereaza CNP-uri valide in functie de sex, data nasterii si judet.",
+    "version": "0.2.6",
     "private": false,
     "scripts": {
         "serve": "vue-cli-service serve",

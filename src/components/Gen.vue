@@ -195,6 +195,7 @@ export default {
   setup(props, ctx) {
     var zile = ref('');
     var ani = ref('');
+    const salvate = reactive([]);
     const gen = reactive({
       sex: '0',
       day: '01',
@@ -222,7 +223,6 @@ export default {
       if (usergen)
         genCNP();
     }
-    const salvate = reactive([]);
 
     function resetGen() {
       while (salvate.length) {

@@ -21,6 +21,26 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #001a42 #ffffff;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(255, 255, 255);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #001a42;
+  border-radius: 20px;
+  border: 3px solid rgb(255, 255, 255);
+}
+
 body {
   position: relative;
 }
