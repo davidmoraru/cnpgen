@@ -1,46 +1,53 @@
 {
-    "name": "cnpgen",
-    "description": "Generator CNP, Generator CNP-uri. Un generator de CNP-uri rapid si complet. Genereaza CNP-uri valide in functie de sex, data nasterii si judet.",
-    "version": "0.2.7",
-    "private": false,
-    "scripts": {
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build",
-        "electron:build": "vue-cli-service electron:build",
-        "electron:serve": "vue-cli-service electron:serve",
-        "electron:generate-icons": "electron-icon-builder --input=./public/img/icons/android-chrome-512x512.png --output=build --flatten",
-        "postinstall": "electron-builder install-app-deps",
-        "postuninstall": "electron-builder install-app-deps",
-        "surge": "vue-cli-service build && surge ./dist --domain https://cnp-generator.surge.sh && start https://cnp-generator.surge.sh"
-    },
-    "main": "background.js",
-    "dependencies": {
-        "bulma": "^0.9.0",
-        "core-js": "^3.6.5",
-        "jquery": "^3.5.1",
-        "register-service-worker": "^1.7.1",
-        "vue": "^3.0.0-0",
-        "vue-router": "^4.0.0-beta.13"
-    },
-    "devDependencies": {
-        "@vue/cli-plugin-babel": "~4.5.0",
-        "@vue/cli-plugin-pwa": "~4.5.0",
-        "@vue/cli-plugin-router": "~4.5.0",
-        "@vue/cli-service": "~4.5.0",
-        "@vue/compiler-sfc": "^3.0.0-0",
-        "electron": "^9.0.0",
-        "electron-devtools-installer": "^3.1.0",
-        "electron-icon-builder": "^1.0.2",
-        "node-sass": "^4.12.0",
-        "sass-loader": "^8.0.2",
-        "vue-adsense": "^1.0.1",
-        "vue-cli-plugin-electron-builder": "~2.0.0-rc.4"
-    },
-    "license": "MIT",
-    "homepage": "https://github.com/davidmoraru/cnpgen",
-    "author": {
-        "name": "David Morary",
-        "email": "alinmoraru980@gmail.com",
-        "url": "https://github.com/davidmoraru"
-    }
+  "scripts": {
+    "xdn": "xdn",
+    "xdn:start": "xdn run",
+    "xdn:build": "xdn build",
+    "xdn:deploy": "xdn deploy",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "electron:generate-icons": "electron-icon-builder --input=./public/img/icons/android-chrome-512x512.png --output=build --flatten",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
+    "surge": "vue-cli-service build && surge ./dist --domain https://cnp-generator.surge.sh && start https://cnp-generator.surge.sh"
+  },
+  "name": "cnpgen",
+  "description": "Generator CNP, Generator CNP-uri. Un generator de CNP-uri rapid si complet. Genereaza CNP-uri valide in functie de sex, data nasterii si judet.",
+  "version": "0.2.7",
+  "private": false,
+  "main": "background.js",
+  "dependencies": {
+    "bulma": "^0.9.0",
+    "core-js": "^3.6.5",
+    "jquery": "^3.5.1",
+    "register-service-worker": "^1.7.1",
+    "vue": "^3.0.0-0",
+    "vue-router": "^4.0.0-beta.13"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0-0",
+    "@xdn/cli": "^2.20.2",
+    "@xdn/core": "^2.20.2",
+    "@xdn/prefetch": "^2.20.2",
+    "electron": "^9.0.0",
+    "electron-devtools-installer": "^3.1.0",
+    "electron-icon-builder": "^1.0.2",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "vue-adsense": "^1.0.1",
+    "vue-cli-plugin-electron-builder": "~2.0.0-rc.4"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/davidmoraru/cnpgen",
+  "author": {
+    "name": "David Morary",
+    "email": "alinmoraru980@gmail.com",
+    "url": "https://github.com/davidmoraru"
+  }
 }

@@ -23,4 +23,7 @@ pnpm-debug.log*
 *.sw?
 
 #Electron-builder output
-/dist_electron
+/dist_electron# XDN generated build directory
+.xdn
+# XDN generated build directory
+.xdn

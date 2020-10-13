@@ -1,0 +1,8 @@
+version: 0.2.6
+files:
+  - url: cnpgen-Setup-0.2.6.exe
+    sha512: SJcRJeoEWCuZETWhYgF1qzvYUyoCsmTrqUl0DKHDbdYycUCtMUT5GFdsbmyumL8YgRr8wofTfimjbDp4ZdaKAg==
+    size: 50198126
+path: cnpgen-Setup-0.2.6.exe
+sha512: SJcRJeoEWCuZETWhYgF1qzvYUyoCsmTrqUl0DKHDbdYycUCtMUT5GFdsbmyumL8YgRr8wofTfimjbDp4ZdaKAg==
+releaseDate: '2020-10-05T18:50:30.404Z'
